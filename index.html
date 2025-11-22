@@ -915,5 +915,15 @@
 
     <script src="assets/script.js"></script>
     <script src="assets/wa.js"></script>
+    <script>
+      document.querySelectorAll(".cta-wa").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          gtag("event", "click_whatsapp", {
+            event_category: "CTA",
+            event_label: btn.getAttribute("data-label") || "unknown",
+          });
+        });
+      });
+    </script>
   </body>
 </html>
